@@ -56,7 +56,7 @@ export default function Form() {
                 }}
                 fontWeight="bold"
                 _dark={{
-                    color: "black",
+                    color: "#091D36",
                 }}
                 lineHeight="shorter"
                 fontFamily="Playfair Display"

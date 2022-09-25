@@ -39,8 +39,10 @@ const Hero = () => {
             height="100vh"
         >
             <Form />
+
             <Box bg="#E9F2FF">
                 <Image
+                
                     src="/woman.png"
                     alt="Women"
                     fit="cover"
@@ -49,8 +51,16 @@ const Hero = () => {
                         base: 64,
                         md: "full",
                     }}
-                
                     loading="lazy"
+                />
+
+                <Image
+                    src="/blob.svg"
+                    alt="blob"
+                    position="absolute"
+                    bottom="0"
+                    right="0"
+                    
                 />
             </Box>
         </SimpleGrid>

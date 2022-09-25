@@ -20,7 +20,12 @@ export default function Step0({ setStep }: step0Props) {
     return (
         <HStack spacing="24px">
             <InputGroup>
-                <Input placeholder="Enter city, state, or zip code" />
+                <Input
+                    placeholder="Enter city, state, or zip code"
+                    _placeholder={{ opacity: 0.4, color: "inherit" }}
+                    borderColor="#091D36"
+                    color="#091D36"
+                />
                 <InputRightElement>
                     <Button
                         colorScheme="brand"
