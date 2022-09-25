@@ -5,8 +5,9 @@ import Step1 from "./step1"
 import Step2 from "./step2"
 import Step3 from "./step3"
 import Step4 from "./step4"
+import Step5 from "./Step5"
 
-export default function Form() {
+export default function Form({ data }: any) {
     const [step, setStep] = useState(0)
     const [subHeading, setSubHeading] = useState([
         "- We're Here to Help",
@@ -34,7 +35,8 @@ export default function Form() {
         <Step1 key={1} setStep={setStep} filters={filters} />,
         <Step2 key={2} setStep={setStep} filters={filters} />,
         <Step3 key={3} setStep={setStep} filters={filters} />,
-        <Step4 key={4} filters={filters} />,
+        <Step4 key={4} setStep={setStep} filters={filters} />,
+        <Step5 key={5} data={data} />,
     ])
 
     const bg = useColorModeValue("#fff", "gray.700")

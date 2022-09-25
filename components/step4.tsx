@@ -10,6 +10,7 @@ import { HStack, Button } from "@chakra-ui/react"
 import { BsArrowRight } from "react-icons/bs"
 
 interface step4Props {
+    setStep: (arg0: number) => void
     filters: {
         location: string
         household: boolean
@@ -19,7 +20,7 @@ interface step4Props {
     }
 }
 
-export default function Step4({ filters }: step4Props) {
+export default function Step4({ setStep, filters }: step4Props) {
     const tags = ["I prefer Spanish", "I'm a minor", "I'm seeking asylum"]
     const [tagArr, setTagArr] = useState(["", ""])
 

@@ -15,7 +15,7 @@ const Home: NextPage = ({ data }: any) => {
                 <link rel="icon" href="/logo.svg"></link>
             </Head>
             <Navbar />
-            <Hero />
+            <Hero data={data} />
         </div>
     )
 }
