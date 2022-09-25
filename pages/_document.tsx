@@ -16,6 +16,7 @@ export default class Document extends NextDocument {
                         href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:wght@700;800;900&display=swap"
                         rel="stylesheet"
                     />
+                    <link rel="icon" href="/favicon.svg" />
                 </Head>
                 <body>
                     {/* 👇 Here's the script */}
