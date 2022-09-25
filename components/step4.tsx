@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
     AutoComplete,
     AutoCompleteInput,
@@ -21,6 +21,14 @@ interface step4Props {
 
 export default function Step4({ filters }: step4Props) {
     const tags = ["I prefer Spanish", "I'm a minor", "I'm seeking asylum"]
+    const [tagArr, setTagArr] = useState(["", ""])
+
+    for (var i = 0; i < tags.length; i++) {
+        if (filters.tags.includes(tags[i])) {
+            tagArr[i] = tags[i]
+        }
+    }
+    const onClick = () => {}
     return (
         <HStack spacing="24px">
             <AutoComplete
@@ -47,13 +55,11 @@ export default function Step4({ filters }: step4Props) {
                             _selected={{ bg: "whiteAlpha.50" }}
                             _focus={{ bg: "whiteAlpha.100" }}
                             value={tag}
-                        >
-                            
-                        </AutoCompleteItem>
+                        ></AutoCompleteItem>
                     ))}
                 </AutoCompleteList>
             </AutoComplete>
-            <Button colorScheme="brand" variant="solid" >
+            <Button colorScheme="brand" variant="solid">
                 <BsArrowRight />
             </Button>
         </HStack>
