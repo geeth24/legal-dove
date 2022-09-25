@@ -28,7 +28,7 @@ export default function Step4({ filters }: step4Props) {
                 multiple
                 onChange={(vals) => console.log(vals)}
             >
-                <AutoCompleteInput variant="filled">
+                <AutoCompleteInput variant="filled" placeholder="Click here">
                     {({ tags }) =>
                         tags.map((tag, tid) => (
                             <AutoCompleteTag
