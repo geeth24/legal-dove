@@ -20,7 +20,7 @@ export default function Form() {
         "Do you live in a household of four or more?",
         "What is your annual household income?",
         "What are of law do you need?",
-        "- Step 4 of 4",
+        "Do any of these apply to you?",
     ])
     const [filters, setFilters] = useState({
         location: "",
