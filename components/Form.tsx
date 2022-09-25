@@ -24,9 +24,9 @@ export default function Form() {
     ])
     const [input, setInput] = useState([
         <Step0 key={0} setStep={setStep} />,
-        <Step1 key={1} />,
-        <Step2 key={2} />,
-        <Step3 key={3} />,
+        <Step1 key={1} setStep={setStep} />,
+        <Step2 key={2} setStep={setStep} />,
+        <Step3 key={3} setStep={setStep} />,
         <Step4 key={4} />,
     ])
 
