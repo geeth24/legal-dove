@@ -26,9 +26,10 @@ export default function Step2({ setStep, filters }: step2Props) {
                     filters.income = e.target.value
                 }}
             >
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                <option value="option1">$1,000 - $5,000</option>
+                <option value="option2">$5,000 - $10,000</option>
+                <option value="option3">$10,000 - $16,987.99</option>
+                <option value="option4">Above $16,988</option>
             </Select>
             <Button colorScheme="brand" variant="solid" onClick={onClick}>
                 <BsArrowRight />
