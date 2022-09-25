@@ -80,8 +80,8 @@ export default function Card({
                         colorScheme="brand"
                         variant="ghost"
                         as={Link}
-                        href={website}
-                        isExternal
+                        href={`https://${website}`}
+                        isExternal={true}
                         leftIcon={<CgArrowTopRightR />}
                     >
                         Go to website

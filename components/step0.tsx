@@ -34,7 +34,8 @@ export default function Step0({ setStep, filters }: step0Props) {
     }
     const [isEmpty, setIsEmpty] = useState(true)
     const [isError, setIsError] = useState(false)
-    const color = useColorModeValue("#091D36", "#9ac8ff")
+    const color = useColorModeValue("#143b6f", "#9ac8ff")
+    const borderColor = useColorModeValue("#143b6f3a", "#9ac8ff")
 
     return (
         <HStack spacing="24px">
@@ -43,7 +44,7 @@ export default function Step0({ setStep, filters }: step0Props) {
                     <Input
                         placeholder="Enter city, state, or zip code"
                         _placeholder={{ opacity: 0.4, color: "inherit" }}
-                        borderColor={color}
+                        borderColor={borderColor}
                         color={color}
                         _hover={{ borderColor: color }}
                         width="300px"
@@ -69,7 +70,7 @@ export default function Step0({ setStep, filters }: step0Props) {
                     </InputRightElement>
                 </InputGroup>
                 {!isError ? (
-                    <FormHelperText>Enter the location.</FormHelperText>
+                    <FormHelperText></FormHelperText>
                 ) : (
                     <FormErrorMessage>Location is required.</FormErrorMessage>
                 )}

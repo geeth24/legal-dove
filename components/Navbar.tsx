@@ -83,6 +83,7 @@ const Navbar = () => {
                             src={useColorModeValue("/logo.svg", "/logod.svg")}
                             alt="Logo"
                             width="200px"
+                            ml={12}
                         />
                     </Flex>
                     <HStack display="flex" alignItems="center" spacing={7}>

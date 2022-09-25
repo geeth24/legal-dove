@@ -10,11 +10,11 @@ import Step5 from "./Step5"
 export default function Form({ data }: any) {
     const [step, setStep] = useState(0)
     const [subHeading, setSubHeading] = useState([
-        "- We're Here to Help",
-        "- Step 1 of 4",
-        "- Step 2 of 4",
-        "- Step 3 of 4",
-        "- Step 4 of 4",
+        "— We're here to help.",
+        "— Step 1 of 4",
+        "— Step 2 of 4",
+        "— Step 3 of 4",
+        "— Step 4 of 4",
     ])
     const [heading, setHeading] = useState([
         "Get the free legal help you need.",
@@ -43,7 +43,7 @@ export default function Form({ data }: any) {
     ])
 
     const bg = useColorModeValue("#fff", "#1A202C")
-    const color = useColorModeValue("#091D36", "#9ac8ff")
+    const color = useColorModeValue("black", "#9ac8ff")
 
     return (
         <Flex
@@ -70,12 +70,15 @@ export default function Form({ data }: any) {
                 fontSize={{
                     base: "50px",
                     md: "50px",
+                    lg: step === 0 ? "70px" : "55px",
                   
                 }}
                 fontWeight="bold"
                 color={color}
                 lineHeight="shorter"
                 fontFamily="Playfair Display"
+                //letter spacing
+                letterSpacing={step === 0 ? "-2.5px" : "-1px"}
             >
                 {heading[step]}
             </chakra.h1>
