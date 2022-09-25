@@ -22,7 +22,6 @@ interface step0Props {
 export default function Step0({ setStep, filters }: step0Props) {
     const onClick = () => {
         setStep(1)
-        filters.location = ""
     }
 
     return (
@@ -35,6 +34,9 @@ export default function Step0({ setStep, filters }: step0Props) {
                     color="#091D36"
                     _hover={{ borderColor: "#091D36" }}
                     width="300px"
+                    onChange={(e) => {
+                        filters.location = e.target.value
+                    }}
                 />
                 <InputRightElement width="3.5rem">
                     <Button
