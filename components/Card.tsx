@@ -46,7 +46,7 @@ export default function Card({
                         </HStack>
                     </Badge>
                     {inclusions.map((item) => {
-                        return <Badge colorScheme="gray">{item}</Badge>
+                        return <Badge colorScheme="gray" key={item}>{item}</Badge>
                     })}
                 </HStack>
                 <Text as="h3" fontSize="24px">
