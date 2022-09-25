@@ -22,7 +22,13 @@ export default function Form() {
         "What are of law do you need?",
         "- Step 4 of 4",
     ])
-    const [input, setInput] = useState([<Step0 key={0} />, <Step1 key={1} />, <Step2 key={2} />, <Step3 key={3} />, <Step4 key={4} />])
+    const [input, setInput] = useState([
+        <Step0 key={0} />,
+        <Step1 key={1} />,
+        <Step2 key={2} />,
+        <Step3 key={3} />,
+        <Step4 key={4} />,
+    ])
 
     return (
         <Flex
