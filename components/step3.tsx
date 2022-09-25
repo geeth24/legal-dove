@@ -15,13 +15,7 @@ interface step3Props {
 
 export default function Step3({ setStep, filters }: step3Props) {
     const [isEmpty, setIsEmpty] = useState(true)
-    const [isError, setIsError] = useState(false)
     const onClick = () => {
-        setIsError(filters.location === "")
-        if (isError) {
-            setStep(4)
-        }
-
         setStep(4)
     }
 

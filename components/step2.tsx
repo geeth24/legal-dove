@@ -15,10 +15,7 @@ interface step2Props {
 
 export default function Step2({ setStep, filters }: step2Props) {
     const [isEmpty, setIsEmpty] = useState(true)
-    const [isError, setIsError] = useState(false)
     const onClick = () => {
-        setIsError(filters.location === "")
-
         setStep(3)
     }
 
