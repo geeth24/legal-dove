@@ -13,11 +13,13 @@ import {
     Text,
     Divider,
     HStack,
+    useColorModeValue,
 } from "@chakra-ui/react"
 import React from "react"
 import Form from "./Form"
 
 const Hero = () => {
+const right = useColorModeValue("#E9F2FF", "#84b7ff")
     return (
         <SimpleGrid
             columns={{
@@ -26,7 +28,7 @@ const Hero = () => {
             }}
             spacing={0}
             _after={{
-                bg: "white",
+               
                 opacity: 0.25,
                 pos: "absolute",
                 top: 0,
@@ -37,10 +39,12 @@ const Hero = () => {
                 content: '" "',
             }}
             height="100vh"
+           
+           
         >
             <Form />
 
-            <Box bg="#E9F2FF">
+            <Box bg={right}>
                 <Image
                 
                     src="/woman.png"

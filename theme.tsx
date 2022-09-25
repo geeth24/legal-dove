@@ -20,7 +20,7 @@ const colors = {
 }
 
 const fonts = {
-    body: "Jost",
+    body: "Inter",
 }
 
 // 3. extend the theme

@@ -12,8 +12,12 @@ export default function step1({ setStep }: step0Props) {
 
     return (
         <HStack spacing="24px">
-            <Button colorScheme="brand" variant="solid" />
-            <Button colorScheme="brand" variant="outline" />
+            <Button colorScheme="brand" variant="solid">
+                YES
+            </Button>
+            <Button colorScheme="brand" variant="outline">
+                NO
+            </Button>
         </HStack>
     )
 }
