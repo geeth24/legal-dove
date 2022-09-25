@@ -11,8 +11,11 @@ import {
     useColorModeValue,
     useDisclosure,
     VStack,
+    Divider,
+    Image,
 } from "@chakra-ui/react"
 import React from "react"
+import { IoLanguage } from "react-icons/io5"
 
 const Navbar = () => {
     const bg = useColorModeValue("white", "gray.800")
@@ -39,18 +42,20 @@ const Navbar = () => {
                     <Flex>
                         <chakra.a
                             href="/"
-                            title="Choc Home Page"
+                            title="Legal Dove"
                             display="flex"
                             alignItems="center"
                         ></chakra.a>
-                        <chakra.h1
+                        {/* <chakra.h1
                             fontSize="xl"
-                            fontWeight="medium"
+                            fontWeight="900"
                             ml="2"
                             color="black"
+                            fontFamily="Playfair Display"
                         >
                             Legal Dove
-                        </chakra.h1>
+                        </chakra.h1> */}
+                        <Image src="/logo.svg" alt="Logo" width="200px"/>
                     </Flex>
                     <HStack display="flex" alignItems="center" spacing={1}>
                         <HStack
@@ -70,6 +75,8 @@ const Navbar = () => {
                         >
                             Help
                         </Button>
+
+                        <IoLanguage fontSize="30px" />
                         <Box
                             display={{
                                 base: "inline-flex",
