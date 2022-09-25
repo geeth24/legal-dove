@@ -20,6 +20,7 @@ import { IoLanguage, IoMoon, IoSunny } from "react-icons/io5"
 
 const Navbar = () => {
     const bg = useColorModeValue("white", "gray.800")
+    const navBg = useColorModeValue("white", "gray.900")
     const mobileNav = useDisclosure()
 
     const { colorMode, toggleColorMode } = useColorMode()
@@ -53,9 +54,9 @@ const Navbar = () => {
                 py={6}
                 zIndex="100"
                 transition="all 0.3s"
-                bg={scrollNav ? useColorModeValue("white", "gray.900") : "transparent"}
+                bg={scrollNav ?  navBg : "transparent"}
                 shadow={scrollNav ? "md" : "none"}
-                
+
             >
                 <Flex
                     alignItems="center"

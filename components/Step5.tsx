@@ -26,7 +26,7 @@ export default function Step5({ data, filters }: step5Props) {
 
             {data.map((item: any) => {
                 if (item.state === filters.location) {
-                    return <Card {...item} />
+                    return <Card key={item.id} {...item} />
                 }
             })}
         </Flex>
