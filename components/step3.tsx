@@ -2,11 +2,18 @@ import { Button, HStack, Select } from "@chakra-ui/react"
 import React from "react"
 import { BsArrowRight } from "react-icons/bs"
 
-interface step0Props {
+interface step3Props {
     setStep: (arg0: number) => void
+    filters: {
+        location: string
+        household: boolean
+        income: number
+        area: string
+        tags: Array<string>
+    }
 }
 
-export default function Step3({ setStep }: step0Props) {
+export default function Step3({ setStep, filters }: step3Props) {
     const onClick = () => {
         setStep(4)
     }

@@ -1,11 +1,18 @@
 import { Button, HStack } from "@chakra-ui/react"
 import React from "react"
 
-interface step0Props {
+interface step1Props {
     setStep: (arg0: number) => void
+    filters: {
+        location: string
+        household: boolean
+        income: number
+        area: string
+        tags: Array<string>
+    }
 }
 
-export default function step1({ setStep }: step0Props) {
+export default function Step1({ setStep, filters }: step1Props) {
     const onClick = () => {
         setStep(2)
     }

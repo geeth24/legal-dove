@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react"
 
-export default function Step4() {
-  return (
-    <div>step4</div>
-  )
+interface step4Props {
+    filters: {
+        location: string
+        household: boolean
+        income: number
+        area: string
+        tags: Array<string>
+    }
+}
+
+export default function Step4({ filters }: step4Props) {
+    return <div>step4</div>
 }

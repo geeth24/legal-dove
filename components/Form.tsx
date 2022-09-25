@@ -31,10 +31,10 @@ export default function Form() {
     })
     const [input, setInput] = useState([
         <Step0 key={0} setStep={setStep} filters={filters} />,
-        <Step1 key={1} setStep={setStep} />,
-        <Step2 key={2} setStep={setStep} />,
-        <Step3 key={3} setStep={setStep} />,
-        <Step4 key={4} />,
+        <Step1 key={1} setStep={setStep} filters={filters} />,
+        <Step2 key={2} setStep={setStep} filters={filters} />,
+        <Step3 key={3} setStep={setStep} filters={filters} />,
+        <Step4 key={4} filters={filters} />,
     ])
 
     return (
