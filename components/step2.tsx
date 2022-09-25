@@ -18,9 +18,6 @@ export default function Step2({ setStep, filters }: step2Props) {
     const [isError, setIsError] = useState(false)
     const onClick = () => {
         setIsError(filters.location === "")
-        if (isError) {
-            setStep(3)
-        }
 
         setStep(3)
     }
