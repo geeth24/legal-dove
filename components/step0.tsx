@@ -29,6 +29,8 @@ export default function Step0({ setStep, filters }: step0Props) {
         if (isError) {
             setStep(1)
         }
+
+        setStep(1)
     }
     const [isEmpty, setIsEmpty] = useState(true)
     const [isError, setIsError] = useState(false)
@@ -52,7 +54,6 @@ export default function Step0({ setStep, filters }: step0Props) {
                             } else {
                                 setIsEmpty(true)
                             }
-                             
                         }}
                     />
                     <InputRightElement width="3.5rem">
