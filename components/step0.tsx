@@ -13,7 +13,7 @@ interface step0Props {
     filters: {
         location: string
         household: string
-        income: number
+        income: string
         area: string
         tags: Array<string>
     }

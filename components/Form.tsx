@@ -25,7 +25,7 @@ export default function Form() {
     const [filters, setFilters] = useState({
         location: "",
         household: "",
-        income: 0,
+        income: "",
         area: "",
         tags: [""],
     })
