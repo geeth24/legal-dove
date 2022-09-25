@@ -5,7 +5,7 @@ interface step1Props {
     setStep: (arg0: number) => void
     filters: {
         location: string
-        household: string
+        household: boolean
         income: string
         area: string
         tags: Array<string>
@@ -15,7 +15,11 @@ interface step1Props {
 export default function Step1({ setStep, filters }: step1Props) {
     const onClick = (e: any) => {
         setStep(2)
-        filters.household = e.target.value
+        if (e.target.value === "YES") {
+            filters.household = true
+        } else {
+            filters.household = false
+        }
     }
 
     return (

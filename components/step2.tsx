@@ -6,7 +6,7 @@ interface step2Props {
     setStep: (arg0: number) => void
     filters: {
         location: string
-        household: string
+        household: boolean
         income: string
         area: string
         tags: Array<string>
@@ -16,7 +16,11 @@ interface step2Props {
 export default function Step2({ setStep, filters }: step2Props) {
     const [isEmpty, setIsEmpty] = useState(true)
     const onClick = () => {
-        setStep(3)
+        if (filters.income === "$16,988 - $34,687.99" && !filters.household) {
+        } else if (filters.income === "Above $34,688" && filters.household) {
+        } else {
+            setStep(3)
+        }
     }
 
     return (
@@ -32,10 +36,9 @@ export default function Step2({ setStep, filters }: step2Props) {
                     }
                 }}
             >
-                <option value="option1">$1,000 - $5,000</option>
-                <option value="option2">$5,000 - $10,000</option>
                 <option value="option3">$10,000 - $16,987.99</option>
-                <option value="option4">Above $16,988</option>
+                <option value="option4">$16,988 - $34,687.99</option>
+                <option value="option4">Above $34,688</option>
             </Select>
             <Button
                 colorScheme="brand"

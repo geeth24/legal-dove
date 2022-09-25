@@ -24,7 +24,7 @@ export default function Form() {
     ])
     const [filters, setFilters] = useState({
         location: "",
-        household: "",
+        household: false,
         income: "",
         area: "",
         tags: [""],
@@ -52,7 +52,10 @@ export default function Form() {
             py={24}
             bg={bg}
         >
-            <Text fontSize="2xl" color={useColorModeValue("gray.500", "gray.400")}>
+            <Text
+                fontSize="2xl"
+                color={useColorModeValue("gray.500", "gray.400")}
+            >
                 {" "}
                 {subHeading[step]}
             </Text>
