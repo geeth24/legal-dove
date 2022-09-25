@@ -1,4 +1,5 @@
 import { useColorModeValue } from "@chakra-ui/react"
+import { motion } from "framer-motion"
 import type { NextPage } from "next"
 import Head from "next/head"
 import Hero from "../components/Hero"
@@ -9,14 +10,22 @@ const Home: NextPage = ({ data }: any) => {
     const bg = useColorModeValue("#fff", "#1A202C")
 
     return (
-        <div style={{ background: bg }}>
-            <Head>
-                <title>Legal Dove</title>
-                <link rel="icon" href="/logo.svg"></link>
-            </Head>
-            <Navbar />
-            <Hero data={data} />
-        </div>
+        <motion.div
+            className="container text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 3 }}
+        >
+            <div style={{ background: bg }}>
+                <Head>
+                    <title>Legal Dove</title>
+                    <link rel="icon" href="/logo.svg"></link>
+                </Head>
+                <Navbar />
+                <Hero data={data} />
+            </div>
+        </motion.div>
     )
 }
 
