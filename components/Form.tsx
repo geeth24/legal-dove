@@ -1,19 +1,10 @@
 import React, { useState } from "react"
-import {
-    FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
-    Flex,
-    Text,
-    chakra,
-    Button,
-    Input,
-    InputGroup,
-    VisuallyHidden,
-    Box,
-    InputRightElement,
-} from "@chakra-ui/react"
+import { Flex, Text, chakra } from "@chakra-ui/react"
+import step0 from "./step0"
+import step1 from "./step1"
+import step2 from "./step2"
+import step3 from "./step3"
+import step4 from "./step4"
 
 export default function Form() {
     const [step, setStep] = useState(0)
@@ -120,7 +111,7 @@ export default function Form() {
                     </InputRightElement>
                 </InputGroup>
             </chakra.form> */}
-            <chakra.p
+            {/* <chakra.p
                 pr={{
                     base: 0,
                     lg: 16,
@@ -135,7 +126,7 @@ export default function Form() {
             >
                 Get the #1 Business Messenger and start delivering personalized
                 experiences at every stage of the customer journey.
-            </chakra.p>
+            </chakra.p> */}
         </Flex>
     )
 }
