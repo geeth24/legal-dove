@@ -13,13 +13,17 @@ import {
     VStack,
     Divider,
     Image,
+    useColorMode,
 } from "@chakra-ui/react"
 import React from "react"
-import { IoLanguage } from "react-icons/io5"
+import { IoLanguage, IoMoon, IoSunny } from "react-icons/io5"
 
 const Navbar = () => {
     const bg = useColorModeValue("white", "gray.800")
     const mobileNav = useDisclosure()
+
+  const { colorMode, toggleColorMode } = useColorMode()
+    
 
     return (
         <React.Fragment>
@@ -55,7 +59,11 @@ const Navbar = () => {
                         >
                             Legal Dove
                         </chakra.h1> */}
-                        <Image src="/logo.svg" alt="Logo" width="200px"/>
+                        <Image
+                            src={useColorModeValue("/logo.svg", "/logod.svg")}
+                            alt="Logo"
+                            width="200px"
+                        />
                     </Flex>
                     <HStack display="flex" alignItems="center" spacing={1}>
                         <HStack
@@ -75,6 +83,18 @@ const Navbar = () => {
                         >
                             Help
                         </Button>
+                        <IconButton
+                            size="lg"
+                            fontSize="lg"
+                            variant="ghost"
+                            icon={
+                                colorMode === "light" ? <IoMoon /> : <IoSunny />
+                            }
+                            aria-label={`Switch to ${
+                                colorMode === "light" ? "dark" : "light"
+                            } mode`}
+                            onClick={toggleColorMode}
+                        />
 
                         <IoLanguage fontSize="30px" />
                         <Box

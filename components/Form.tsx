@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Flex, Text, chakra } from "@chakra-ui/react"
+import { Flex, Text, chakra, useColorModeValue } from "@chakra-ui/react"
 import Step0 from "./step0"
 import Step1 from "./step1"
 import Step2 from "./step2"
@@ -36,7 +36,9 @@ export default function Form() {
         <Step3 key={3} setStep={setStep} filters={filters} />,
         <Step4 key={4} filters={filters} />,
     ])
-    
+
+    const bg = useColorModeValue("#fff", "gray.700")
+    const color = useColorModeValue("#091D36", "#9ac8ff")
 
     return (
         <Flex
@@ -48,9 +50,9 @@ export default function Form() {
                 lg: 20,
             }}
             py={24}
-            bg="white"
+            bg={bg}
         >
-            <Text fontSize="2xl" color="gray.600">
+            <Text fontSize="2xl" color={useColorModeValue("gray.500", "gray.400")}>
                 {" "}
                 {subHeading[step]}
             </Text>
@@ -63,9 +65,7 @@ export default function Form() {
                     lg: "7xl",
                 }}
                 fontWeight="bold"
-                _dark={{
-                    color: "#091D36",
-                }}
+                color={color}
                 lineHeight="shorter"
                 fontFamily="Playfair Display"
             >
