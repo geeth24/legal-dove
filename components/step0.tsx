@@ -7,6 +7,7 @@ import {
     FormControl,
     FormHelperText,
     FormErrorMessage,
+    useColorModeValue,
 } from "@chakra-ui/react"
 import React, { useState } from "react"
 import { BsArrowRight } from "react-icons/bs"
@@ -29,7 +30,9 @@ export default function Step0({ setStep, filters }: step0Props) {
             setStep(1)
         }
     }
+    const [isEmpty, setIsEmpty] = useState(true)
     const [isError, setIsError] = useState(false)
+    const color = useColorModeValue("#091D36", "#9ac8ff")
 
     return (
         <HStack spacing="24px">
@@ -38,12 +41,18 @@ export default function Step0({ setStep, filters }: step0Props) {
                     <Input
                         placeholder="Enter city, state, or zip code"
                         _placeholder={{ opacity: 0.4, color: "inherit" }}
-                        borderColor="#091D36"
-                        color="#091D36"
-                        _hover={{ borderColor: "#091D36" }}
+                        borderColor={color}
+                        color={color}
+                        _hover={{ borderColor: color }}
                         width="300px"
                         onChange={(e) => {
                             filters.location = e.target.value
+                            if (e.target.value !== "") {
+                                setIsEmpty(false)
+                            } else {
+                                setIsEmpty(true)
+                            }
+                             
                         }}
                     />
                     <InputRightElement width="3.5rem">
@@ -52,6 +61,7 @@ export default function Step0({ setStep, filters }: step0Props) {
                             onClick={onClick}
                             h="1.75rem"
                             size="sm"
+                            isDisabled={isEmpty}
                         >
                             <BsArrowRight />
                         </Button>
