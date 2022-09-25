@@ -28,7 +28,12 @@ export default function Step4({ filters }: step4Props) {
             tagArr[i] = tags[i]
         }
     }
-    const onClick = () => {}
+    const onClick = () => {
+        for (var i = 0; i < tagArr.length; i++) {
+            tags[i] = tagArr[i]
+        }
+    }
+
     return (
         <HStack spacing="24px">
             <AutoComplete
@@ -59,7 +64,7 @@ export default function Step4({ filters }: step4Props) {
                     ))}
                 </AutoCompleteList>
             </AutoComplete>
-            <Button colorScheme="brand" variant="solid">
+            <Button colorScheme="brand" variant="solid" onClick={onClick}>
                 <BsArrowRight />
             </Button>
         </HStack>
