@@ -7,7 +7,7 @@ interface step2Props {
     filters: {
         location: string
         household: string
-        income: number
+        income: string
         area: string
         tags: Array<string>
     }
@@ -23,7 +23,7 @@ export default function Step2({ setStep, filters }: step2Props) {
             <Select
                 placeholder="Select your income"
                 onChange={(e) => {
-                    filters.household = e.target.value
+                    filters.income = e.target.value
                 }}
             >
                 <option value="option1">Option 1</option>

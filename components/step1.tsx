@@ -6,23 +6,32 @@ interface step1Props {
     filters: {
         location: string
         household: string
-        income: number
+        income: string
         area: string
         tags: Array<string>
     }
 }
 
 export default function Step1({ setStep, filters }: step1Props) {
-    const onClick = () => {
+    const onClick = (e: any) => {
         setStep(2)
+        filters.household = e.target.value
     }
 
     return (
         <HStack spacing="24px">
-            <Button colorScheme="brand" variant="solid">
+            <Button
+                colorScheme="brand"
+                variant="solid"
+                onClick={(e) => onClick(e)}
+            >
                 YES
             </Button>
-            <Button colorScheme="brand" variant="outline">
+            <Button
+                colorScheme="brand"
+                variant="outline"
+                onClick={(e) => onClick(e)}
+            >
                 NO
             </Button>
         </HStack>
