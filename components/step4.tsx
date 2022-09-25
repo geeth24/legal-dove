@@ -33,15 +33,12 @@ export default function Step4({ setStep, filters }: step4Props) {
         for (var i = 0; i < tagArr.length; i++) {
             tags[i] = tagArr[i]
         }
+        setStep(5)
     }
 
     return (
         <HStack spacing="24px">
-            <AutoComplete
-                openOnFocus
-                multiple
-                onChange={(vals) => console.log(vals)}
-            >
+            <AutoComplete openOnFocus multiple>
                 <AutoCompleteInput variant="filled" placeholder="Click here">
                     {({ tags }) =>
                         tags.map((tag, tid) => (
