@@ -22,8 +22,7 @@ const Navbar = () => {
     const bg = useColorModeValue("white", "gray.800")
     const mobileNav = useDisclosure()
 
-  const { colorMode, toggleColorMode } = useColorMode()
-    
+    const { colorMode, toggleColorMode } = useColorMode()
 
     return (
         <React.Fragment>
@@ -65,7 +64,7 @@ const Navbar = () => {
                             width="200px"
                         />
                     </Flex>
-                    <HStack display="flex" alignItems="center" spacing={1}>
+                    <HStack display="flex" alignItems="center" spacing={7}>
                         <HStack
                             spacing={1}
                             mr={1}
@@ -83,6 +82,7 @@ const Navbar = () => {
                         >
                             Help
                         </Button>
+                        <IoLanguage fontSize="30px" />
                         <IconButton
                             size="lg"
                             fontSize="lg"
@@ -95,8 +95,6 @@ const Navbar = () => {
                             } mode`}
                             onClick={toggleColorMode}
                         />
-
-                        <IoLanguage fontSize="30px" />
                         <Box
                             display={{
                                 base: "inline-flex",
