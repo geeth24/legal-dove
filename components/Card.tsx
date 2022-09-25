@@ -21,6 +21,7 @@ interface CardProps {
     phoneNumber: string
     address: string
     website: string
+    key: number
 }
 
 export default function Card({
@@ -32,9 +33,10 @@ export default function Card({
     phoneNumber,
     address,
     website,
+    key,
 }: CardProps) {
     return (
-        <Box borderRadius="8px" borderBottom="1px solid #E2E8F0" mt={10} pb={5}>
+        <Box borderRadius="8px" borderBottom="1px solid #E2E8F0" mt={10} pb={5} key={key}>
             <VStack spacing="8px" align="flex-start">
                 <HStack spacing="8px" color="#fff">
                     <Badge colorScheme="green">
