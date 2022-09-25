@@ -36,7 +36,7 @@ export default function Form({ data }: any) {
         <Step2 key={2} setStep={setStep} filters={filters} />,
         <Step3 key={3} setStep={setStep} filters={filters} />,
         <Step4 key={4} setStep={setStep} filters={filters} />,
-        <Step5 key={5} data={data} />,
+        <Step5 key={5} data={data} filters={filters} />,
     ])
 
     const bg = useColorModeValue("#fff", "gray.700")
