@@ -29,6 +29,13 @@ export default function Form() {
         <Step3 key={3} setStep={setStep} />,
         <Step4 key={4} />,
     ])
+    const [filter, setFilter] = useState({
+        location: "",
+        household: false,
+        income: 0,
+        area: "",
+        tags: [],
+    })
 
     return (
         <Flex
@@ -63,6 +70,7 @@ export default function Form() {
             >
                 {heading[step]}
             </chakra.h1>
+
             {input[step]}
         </Flex>
     )
