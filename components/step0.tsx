@@ -8,7 +8,7 @@ import {
 import React from "react"
 import { BsArrowRight } from "react-icons/bs"
 
-export default function step0() {
+export default function Step0() {
     return (
         <HStack spacing="24px">
             <InputGroup>

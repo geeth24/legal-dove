@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { Flex, Text, chakra } from "@chakra-ui/react"
-import step0 from "./step0"
-import step1 from "./step1"
-import step2 from "./step2"
-import step3 from "./step3"
-import step4 from "./step4"
+import Step0 from "./step0"
+import Step1 from "./step1"
+import Step2 from "./step2"
+import Step3 from "./step3"
+import Step4 from "./step4"
 
 export default function Form() {
     const [step, setStep] = useState(0)
@@ -22,6 +22,8 @@ export default function Form() {
         "What are of law do you need?",
         "- Step 4 of 4",
     ])
+    const [input, setInput] = useState([<Step0 key={0} />, <Step1 key={1} />, <Step2 key={2} />, <Step3 key={3} />, <Step4 key={4} />])
+
     return (
         <Flex
             direction="column"
@@ -55,78 +57,7 @@ export default function Form() {
             >
                 {heading[step]}
             </chakra.h1>
-            {/* <chakra.form w="full" mb={6}>
-                <VisuallyHidden>Your Email</VisuallyHidden>
-                <Box
-                    display={{
-                        base: "block",
-                        lg: "none",
-                    }}
-                >
-                    <Input
-                        size="lg"
-                        color="brand.900"
-                        type="email"
-                        placeholder="Enter your email..."
-                        bg="white"
-                    />
-                    <Button
-                        w="full"
-                        mt={2}
-                        color="white"
-                        variant="solid"
-                        colorScheme="brand"
-                        size="lg"
-                        type="submit"
-                    >
-                        Get Started
-                    </Button>
-                </Box>
-                <InputGroup
-                    size="lg"
-                    w="full"
-                    display={{
-                        base: "none",
-                        lg: "flex",
-                    }}
-                >
-                    <Input
-                        size="lg"
-                        color="brand.900"
-                        type="email"
-                        placeholder="Enter your email..."
-                        bg="white"
-                    />
-                    <InputRightElement w="auto">
-                        <Button
-                            color="white"
-                            variant="solid"
-                            colorScheme="brand"
-                            size="lg"
-                            type="submit"
-                            roundedLeft={0}
-                        >
-                            Get Started
-                        </Button>
-                    </InputRightElement>
-                </InputGroup>
-            </chakra.form> */}
-            {/* <chakra.p
-                pr={{
-                    base: 0,
-                    lg: 16,
-                }}
-                mb={4}
-                fontSize="sm"
-                color="brand.600"
-                _dark={{
-                    color: "gray.400",
-                }}
-                letterSpacing="wider"
-            >
-                Get the #1 Business Messenger and start delivering personalized
-                experiences at every stage of the customer journey.
-            </chakra.p> */}
+            {input[step]}
         </Flex>
     )
 }
