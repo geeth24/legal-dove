@@ -22,20 +22,20 @@ export default function Form() {
         "What are of law do you need?",
         "- Step 4 of 4",
     ])
+    const [filters, setFilters] = useState({
+        location: "",
+        household: false,
+        income: 0,
+        area: "",
+        tags: [""],
+    })
     const [input, setInput] = useState([
-        <Step0 key={0} setStep={setStep} />,
+        <Step0 key={0} setStep={setStep} filters={filters} />,
         <Step1 key={1} setStep={setStep} />,
         <Step2 key={2} setStep={setStep} />,
         <Step3 key={3} setStep={setStep} />,
         <Step4 key={4} />,
     ])
-    const [filter, setFilter] = useState({
-        location: "",
-        household: false,
-        income: 0,
-        area: "",
-        tags: [],
-    })
 
     return (
         <Flex

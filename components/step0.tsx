@@ -10,11 +10,19 @@ import { BsArrowRight } from "react-icons/bs"
 
 interface step0Props {
     setStep: (arg0: number) => void
+    filters: {
+        location: string
+        household: boolean
+        income: number
+        area: string
+        tags: Array<string>
+    }
 }
 
-export default function Step0({ setStep }: step0Props) {
+export default function Step0({ setStep, filters }: step0Props) {
     const onClick = () => {
         setStep(1)
+        filters.location = ""
     }
 
     return (
