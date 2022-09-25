@@ -18,8 +18,8 @@ import {
 import React from "react"
 import Form from "./Form"
 
-const Hero = () => {
-const right = useColorModeValue("#E9F2FF", "#84b7ff")
+const Hero = ({ data }: any) => {
+    const right = useColorModeValue("#E9F2FF", "#84b7ff")
     return (
         <SimpleGrid
             columns={{
@@ -28,7 +28,6 @@ const right = useColorModeValue("#E9F2FF", "#84b7ff")
             }}
             spacing={0}
             _after={{
-               
                 opacity: 0.25,
                 pos: "absolute",
                 top: 0,
@@ -39,14 +38,11 @@ const right = useColorModeValue("#E9F2FF", "#84b7ff")
                 content: '" "',
             }}
             height="100vh"
-           
-           
         >
-            <Form />
+            <Form data={data} />
 
             <Box bg={right}>
                 <Image
-                
                     src="/woman.png"
                     alt="Women"
                     fit="cover"
@@ -64,7 +60,6 @@ const right = useColorModeValue("#E9F2FF", "#84b7ff")
                     position="absolute"
                     bottom="0"
                     right="0"
-                    
                 />
             </Box>
         </SimpleGrid>
