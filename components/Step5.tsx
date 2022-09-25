@@ -21,14 +21,12 @@ export default function Step5({ data, filters }: step5Props) {
 
     return (
         <Flex display="flex" flexDirection="column">
-            
             <Heading as="h2" fontFamily="Playfair Display" fontSize="50px">
-                We found {data.length} matching legal service
-                providers.
+                We found {data.length} matching legal service providers.
             </Heading>
 
             {data.map((item: any) => {
-                if (item.state === filters.location) {
+                if (item.state === "Texas") {
                     return <Card key={item.id} {...item} />
                 }
             })}
