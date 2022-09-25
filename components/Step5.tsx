@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
+import { Flex, Heading } from "@chakra-ui/react"
+import Card from "./Card"
 
 interface step5Props {
     data: any
@@ -12,5 +14,20 @@ interface step5Props {
 }
 
 export default function Step5({ data, filters }: step5Props) {
-    return <div>Step5</div>
+    console.log(data)
+    const [matches, setMatches] = useState([])
+    return (
+        <Flex display="flex" flexDirection="column">
+            <Heading as="h2">
+                We found x matching legal service providers.
+            </Heading>
+            {data.map((provider: any, key: number) => {
+                if (
+                    provider.location === filters.location &&
+                    provider.inclusions.includes(filters.area)
+                ) {
+                }
+            })}
+        </Flex>
+    )
 }
