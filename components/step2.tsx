@@ -1,4 +1,16 @@
-import { HStack, Select, Button } from "@chakra-ui/react"
+import {
+    HStack,
+    Select,
+    Button,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
+    useDisclosure,
+} from "@chakra-ui/react"
 import React, { useState } from "react"
 import { BsArrowRight } from "react-icons/bs"
 
@@ -15,9 +27,11 @@ interface step2Props {
 
 export default function Step2({ setStep, filters }: step2Props) {
     const [isEmpty, setIsEmpty] = useState(true)
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
     const onClick = () => {
-        if (filters.income === "$16,988 - $34,687.99" && !filters.household) {
-        } else if (filters.income === "Above $34,688" && filters.household) {
+        if (filters.income === "$16,988 - $34,687.99" || filters.income === "Above $34,688") {
+            onOpen()
         } else {
             setStep(3)
         }
@@ -25,6 +39,22 @@ export default function Step2({ setStep, filters }: step2Props) {
 
     return (
         <HStack spacing="24px">
+            <Modal onClose={onClose} isOpen={isOpen} isCentered>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader> Ineligible </ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        Unfortunately, you are ineligible for pro bono legal
+                        services as your income is higher than $16,988.
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={onClose} colorScheme="red">
+                            Close
+                        </Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
             <Select
                 placeholder="Select your income"
                 onChange={(e) => {
@@ -34,11 +64,16 @@ export default function Step2({ setStep, filters }: step2Props) {
                     } else {
                         setIsEmpty(true)
                     }
+                    
                 }}
             >
-                <option value="option3">$10,000 - $16,987.99</option>
-                <option value="option4">$16,988 - $34,687.99</option>
-                <option value="option4">Above $34,688</option>
+                <option value="$10,000 - $16,987.99">
+                    $10,000 - $16,987.99
+                </option>
+                <option value="$16,988 - $34,687.99">
+                    $16,988 - $34,687.99
+                </option>
+                <option value="Above $34,688">Above $34,688</option>
             </Select>
             <Button
                 colorScheme="brand"
