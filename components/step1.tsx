@@ -24,12 +24,16 @@ export default function Step1({ setStep, filters }: step1Props) {
                 colorScheme="brand"
                 variant="solid"
                 onClick={(e) => onClick(e)}
-            />
+            >
+                YES
+            </Button>
             <Button
                 colorScheme="brand"
                 variant="outline"
                 onClick={(e) => onClick(e)}
-            />
+            >
+                NO
+            </Button>
         </HStack>
     )
 }
