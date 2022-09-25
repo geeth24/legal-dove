@@ -34,7 +34,7 @@ export default function Card({
     website,
 }: CardProps) {
     return (
-        <Box p="24px" borderRadius="8px" borderBottom="1px solid #E2E8F0">
+        <Box borderRadius="8px" borderBottom="1px solid #E2E8F0" mt={10} pb={5}>
             <VStack spacing="8px" align="flex-start">
                 <HStack spacing="8px" color="#fff">
                     <Badge colorScheme="green">
@@ -86,6 +86,7 @@ export default function Card({
                     </Button>
                 </HStack>
             </VStack>
+
         </Box>
     )
 }
