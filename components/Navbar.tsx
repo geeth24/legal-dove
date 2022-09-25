@@ -24,6 +24,21 @@ const Navbar = () => {
 
     const { colorMode, toggleColorMode } = useColorMode()
 
+    //if scrollY > 100, change navbar color
+    const [scrollNav, setScrollNav] = React.useState(false)
+
+    const changeNav = () => {
+        if (window.scrollY >= 100) {
+            setScrollNav(true)
+        } else {
+            setScrollNav(false)
+        }
+    }
+
+    React.useEffect(() => {
+        window.addEventListener("scroll", changeNav)
+    }, [])
+
     return (
         <React.Fragment>
             <chakra.header
@@ -36,6 +51,11 @@ const Navbar = () => {
                     sm: 8,
                 }}
                 py={6}
+                zIndex="100"
+                transition="all 0.3s"
+                bg={scrollNav ? useColorModeValue("white", "gray.900") : "transparent"}
+                shadow={scrollNav ? "md" : "none"}
+                
             >
                 <Flex
                     alignItems="center"

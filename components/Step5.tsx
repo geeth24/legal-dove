@@ -15,21 +15,19 @@ interface step5Props {
 
 export default function Step5({ data, filters }: step5Props) {
     const [matches, setMatches] = useState([{}])
+
+    const [count, setCount] = useState(0)
+
     return (
         <Flex display="flex" flexDirection="column">
-            <Heading as="h2">
-                We found x matching legal service providers.
+            <Heading as="h2" fontFamily="Playfair Display" fontSize="36px">
+                We found {data.length} programs that match your criteria
             </Heading>
-            {data.map((provider: any) => {
-                if (
-                    provider.location === filters.location ||
-                    provider.inclusions.includes(filters.area)
-                ) {
-                    // setMatches((arr) => [...arr, provider])
-                    matches.push(provider)
+
+            {data.map((item: any) => {
+                if (item.state === filters.location) {
+                    return <Card {...item} />
                 }
-                console.log(matches)
-                console.log("afioe")
             })}
         </Flex>
     )

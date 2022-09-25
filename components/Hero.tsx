@@ -41,7 +41,7 @@ const Hero = ({ data }: any) => {
         >
             <Form data={data} />
 
-            <Box bg={right}>
+            <Box bg={right} position="fixed" top={0} bottom={0} right={0} zIndex={0} >
                 <Image
                     src="/woman.png"
                     alt="Women"

@@ -39,7 +39,7 @@ export default function Form({ data }: any) {
         <Step5 key={5} data={data} filters={filters} />,
     ])
 
-    const bg = useColorModeValue("#fff", "gray.700")
+    const bg = useColorModeValue("#fff", "#1A202C")
     const color = useColorModeValue("#091D36", "#9ac8ff")
 
     return (
