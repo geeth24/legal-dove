@@ -1,5 +1,5 @@
 import { Button, HStack, Select } from "@chakra-ui/react"
-import React from "react"
+import React, { useState } from "react"
 import { BsArrowRight } from "react-icons/bs"
 
 interface step3Props {
@@ -14,7 +14,14 @@ interface step3Props {
 }
 
 export default function Step3({ setStep, filters }: step3Props) {
+    const [isEmpty, setIsEmpty] = useState(true)
+    const [isError, setIsError] = useState(false)
     const onClick = () => {
+        setIsError(filters.location === "")
+        if (isError) {
+            setStep(4)
+        }
+
         setStep(4)
     }
 
@@ -24,11 +31,22 @@ export default function Step3({ setStep, filters }: step3Props) {
                 placeholder="Select area of law"
                 onChange={(e) => {
                     filters.area = e.target.value
+                    if (e.target.value !== "") {
+                        setIsEmpty(false)
+                    } else {
+                        setIsEmpty(true)
+                    }
                 }}
             >
                 <option value="option1">Immigration Law</option>
+                <option value="option1">Other</option>
             </Select>
-            <Button colorScheme="brand" variant="solid" onClick={onClick}>
+            <Button
+                colorScheme="brand"
+                variant="solid"
+                onClick={onClick}
+                isDisabled={isEmpty}
+            >
                 <BsArrowRight />
             </Button>
         </HStack>
