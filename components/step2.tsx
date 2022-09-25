@@ -1,5 +1,5 @@
 import { HStack, Select, Button } from "@chakra-ui/react"
-import React from "react"
+import React, { useState } from "react"
 import { BsArrowRight } from "react-icons/bs"
 
 interface step2Props {
@@ -14,7 +14,14 @@ interface step2Props {
 }
 
 export default function Step2({ setStep, filters }: step2Props) {
+    const [isEmpty, setIsEmpty] = useState(true)
+    const [isError, setIsError] = useState(false)
     const onClick = () => {
+        setIsError(filters.location === "")
+        if (isError) {
+            setStep(3)
+        }
+
         setStep(3)
     }
 
@@ -24,6 +31,11 @@ export default function Step2({ setStep, filters }: step2Props) {
                 placeholder="Select your income"
                 onChange={(e) => {
                     filters.income = e.target.value
+                    if (e.target.value !== "") {
+                        setIsEmpty(false)
+                    } else {
+                        setIsEmpty(true)
+                    }
                 }}
             >
                 <option value="option1">$1,000 - $5,000</option>
@@ -31,7 +43,12 @@ export default function Step2({ setStep, filters }: step2Props) {
                 <option value="option3">$10,000 - $16,987.99</option>
                 <option value="option4">Above $16,988</option>
             </Select>
-            <Button colorScheme="brand" variant="solid" onClick={onClick}>
+            <Button
+                colorScheme="brand"
+                variant="solid"
+                onClick={onClick}
+                isDisabled={isEmpty}
+            >
                 <BsArrowRight />
             </Button>
         </HStack>
