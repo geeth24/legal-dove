@@ -3,7 +3,7 @@ import React from "react"
 interface step4Props {
     filters: {
         location: string
-        household: boolean
+        household: string
         income: number
         area: string
         tags: Array<string>

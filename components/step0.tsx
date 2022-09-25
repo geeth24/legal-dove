@@ -12,7 +12,7 @@ interface step0Props {
     setStep: (arg0: number) => void
     filters: {
         location: string
-        household: boolean
+        household: string
         income: number
         area: string
         tags: Array<string>
