@@ -7,9 +7,6 @@ import Step3 from "./step3"
 import Step4 from "./step4"
 import Step5 from "./Step5"
 
-import { AnimatePresence, motion } from "framer-motion"
-
-
 export default function Form({ data }: any) {
     const [step, setStep] = useState(0)
     const [subHeading, setSubHeading] = useState([
@@ -46,48 +43,41 @@ export default function Form({ data }: any) {
     const color = useColorModeValue("#091D36", "#9ac8ff")
 
     return (
-        <AnimatePresence>
-            <Flex
-                direction="column"
-                alignItems="start"
-                justifyContent="center"
-                px={{
-                    base: 4,
-                    lg: 20,
-                }}
-                py={24}
-                bg={bg}
-                // as={motion.div}
-                // //move to right after every step
-                // initial={{ x: 0 }}
-                // animate={{ x: -step * 100 + "%" }}
-               
+        <Flex
+            direction="column"
+            alignItems="start"
+            justifyContent="center"
+            px={{
+                base: 4,
+                lg: 20,
+            }}
+            py={24}
+            bg={bg}
+        >
+            <Text
+                fontSize="2xl"
+                color={useColorModeValue("gray.500", "gray.400")}
             >
-                <Text
-                    fontSize="2xl"
-                    color={useColorModeValue("gray.500", "gray.400")}
-                >
-                    {" "}
-                    {subHeading[step]}
-                </Text>
+                {" "}
+                {subHeading[step]}
+            </Text>
 
-                <chakra.h1
-                    mb={6}
-                    fontSize={{
-                        base: "6xl",
-                        md: "6xl",
-                        lg: "7xl",
-                    }}
-                    fontWeight="bold"
-                    color={color}
-                    lineHeight="shorter"
-                    fontFamily="Playfair Display"
-                >
-                    {heading[step]}
-                </chakra.h1>
+            <chakra.h1
+                mb={6}
+                fontSize={{
+                    base: "6xl",
+                    md: "6xl",
+                    lg: "7xl",
+                }}
+                fontWeight="bold"
+                color={color}
+                lineHeight="shorter"
+                fontFamily="Playfair Display"
+            >
+                {heading[step]}
+            </chakra.h1>
 
-                {input[step]}
-            </Flex>
-        </AnimatePresence>
+            {input[step]}
+        </Flex>
     )
 }
