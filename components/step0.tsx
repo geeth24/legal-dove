@@ -25,12 +25,15 @@ export default function Step0({ setStep }: step0Props) {
                     _placeholder={{ opacity: 0.4, color: "inherit" }}
                     borderColor="#091D36"
                     color="#091D36"
+                    _hover={{ borderColor: "#091D36" }}
+                    width="300px"
                 />
-                <InputRightElement>
+                <InputRightElement width="3.5rem">
                     <Button
                         colorScheme="brand"
-                        variant="solid"
                         onClick={onClick}
+                        h="1.75rem"
+                        size="sm"
                     >
                         <BsArrowRight />
                     </Button>
