@@ -29,6 +29,9 @@ export default function Form({ data }: any) {
         income: "",
         area: "",
         tags: [""],
+        phoneNumber: "",
+        address: "",
+        website: "",
     })
     const [input, setInput] = useState([
         <Step0 key={0} setStep={setStep} filters={filters} />,
@@ -65,9 +68,9 @@ export default function Form({ data }: any) {
             <chakra.h1
                 mb={6}
                 fontSize={{
-                    base: "6xl",
-                    md: "6xl",
-                    lg: "7xl",
+                    base: "50px",
+                    md: "50px",
+                  
                 }}
                 fontWeight="bold"
                 color={color}

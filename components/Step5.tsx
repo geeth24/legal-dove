@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Flex, Heading } from "@chakra-ui/react"
+import { Badge, Flex, Heading } from "@chakra-ui/react"
 import Card from "./Card"
 
 interface step5Props {
@@ -10,6 +10,7 @@ interface step5Props {
         income: string
         area: string
         tags: Array<string>
+        phoneNumber: string
     }
 }
 
@@ -20,8 +21,10 @@ export default function Step5({ data, filters }: step5Props) {
 
     return (
         <Flex display="flex" flexDirection="column">
-            <Heading as="h2" fontFamily="Playfair Display" fontSize="36px">
-                We found {data.length} programs that match your criteria
+            
+            <Heading as="h2" fontFamily="Playfair Display" fontSize="50px">
+                We found {data.length} matching legal service
+                providers.
             </Heading>
 
             {data.map((item: any) => {
