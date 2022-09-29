@@ -56,6 +56,7 @@ export default function Form({ data }: any) {
             }}
             py={24}
             bg={bg}
+            zIndex={1}
         >
             <Text
                 fontSize="2xl"

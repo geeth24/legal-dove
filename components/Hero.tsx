@@ -41,9 +41,16 @@ const Hero = ({ data }: any) => {
         >
             <Form data={data} />
 
-            <Box bg={right}  top={0} bottom={0} right={0} zIndex={0} >
+            <Box
+                bg={right}
+                position="fixed"
+                top={0}
+                bottom={0}
+                right={0}
+                zIndex={0}
+            >
                 <Image
-                    src="/woman.png"
+                    src="/comb.png"
                     alt="Women"
                     fit="cover"
                     w="full"
@@ -52,14 +59,6 @@ const Hero = ({ data }: any) => {
                         md: "full",
                     }}
                     loading="lazy"
-                />
-
-                <Image
-                    src="/blob.svg"
-                    alt="blob"
-                    position="absolute"
-                    bottom="0"
-                    right="0"
                 />
             </Box>
         </SimpleGrid>
